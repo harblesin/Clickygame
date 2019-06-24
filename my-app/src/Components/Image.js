@@ -1,7 +1,8 @@
 import React from "react";
+import "./imageStyle.css";
 
 function Image(props){
-    return <img src={props.url} alt=""></img>
+    return <img class="shadow-lg mb-5 bg-white rounded check" src={props.url} alt=""></img>
 }
 
 export default Image;

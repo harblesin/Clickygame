@@ -3,7 +3,7 @@ import './App.css';
 import Navbar from "./Components/Navbar";
 import Image from "./Components/Image";
 import Content from "./Components/Content";
-import friends from "./pictures.json";
+import pics from "./pictures.json";
 
 class App extends Component {
   render (){
@@ -13,8 +13,10 @@ class App extends Component {
 
     <div className="App">
       <Navbar />
-      <Content>
-        <Image url={friends[0].url}></Image>
+      <Content> {pics.map(pic => (
+        <Image url={pic.url}></Image>
+      ))}
+        
       </Content>
     </div>
   );
