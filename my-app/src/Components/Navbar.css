@@ -1,3 +1,12 @@
-.navbar{
-    color:white;
+.jumbotron{
+    
+    margin-right:-15px;
+    margin-left:-15px;
+    background-color:rgb(255, 255, 255);
+    color: oldlace;
+}
+
+.display-5, h3{
+    background-color: rgb(255, 255, 255);
+    text-shadow: 1px 1px 2px rgb(121, 86, 86), 0 0 1em rgb(206, 187, 125), 0 0 0.2em rgb(168, 23, 173);
 }
