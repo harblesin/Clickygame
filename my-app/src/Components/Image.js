@@ -5,9 +5,10 @@ function Image(props) {
   return (
     <div className="col-auto mx-auto p-5">
       <img
-        class="shadow-lg mb-5 bg-white rounded check"
+        className="shadow-lg mb-5 bg-white rounded check"
         src={props.url}
         alt=""
+        onClick={() => props.imageClicked(props.id)}
       />
     </div>
   );
