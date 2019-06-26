@@ -17,8 +17,8 @@ class App extends Component {
   imageClicked = id => {
     if (this.state.clicked == false) {
       this.setState({ score: this.state.score + 1 });
-      //const pics = this.state.pics.filter(pic => pic.id !== id);
-      this.setState({ clicked: (this.state.clicked = true) });
+      const pics = this.state.pics.filter(pic => pic.id !== id);
+      this.setState({ clicked: (this.clicked = true) });
 
       this.setState({ pics });
     } else alert("You already clicked that!");
