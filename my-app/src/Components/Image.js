@@ -1,17 +1,25 @@
-import React from "react";
+import React, { Component } from "react";
 import "./imageStyle.css";
 
-function Image(props) {
-  return (
+class Image extends Component {
+
+    state = {
+        clicked: false
+    }
+
+    render(){
+        return (
     <div className="col-auto mx-auto p-5">
       <img
         className="shadow-lg mb-5 bg-white rounded check"
-        src={props.url}
+        src={this.props.url}
         alt=""
-        onClick={() => props.imageClicked(props.id)}
+        onClick={() => this.props.imageClicked(this.props.id)}
       />
     </div>
   );
 }
+    }
+  
 
 export default Image;
