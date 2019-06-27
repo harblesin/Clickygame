@@ -6,6 +6,12 @@ import Content from "./Components/Content";
 import pics from "./pictures.json";
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.imageEl = React.createRef();
+  }
+
+
   state = {
     pics,
     newPics: [],
@@ -14,9 +20,12 @@ class App extends Component {
 
   imageClicked = id => {
 
+    console.log(this.props.state  )
+
     for(let i=0; this.state.pics.length > i; i++){
      
       if (this.state.pics[i].id === id) {
+        
             this.setState({ score: this.state.score + 1 });
             const newPics = this.state.newPics.push(this.state.pics[i]);
             const pics = this.state.pics.filter(pic => pic.id !== id);
@@ -34,16 +43,11 @@ class App extends Component {
   };
     }
     
-   
+handleClick = () => {
+  this.imageEl.current.imgClicked();
+  console.log("THIS IS WORKING")
+}
 
-  // alreadyClicked = id => {
-  //   const pics = this.state.pics.filter(pic => this)
-  //   return pics
-  // }
-
-  alreadyClicked = id => {
-    console.log("Fore sure");
-  };
 
   render() {
     return (
@@ -53,9 +57,10 @@ class App extends Component {
           {this.state.pics.map(pic => (
             <Image
               id={pic.id}
+              ref={this.imageEl}
               clicked={this.state.clicked}
               key={pic.id}
-              imageClicked={this.imageClicked}
+              onClick={this.handleClick}
               url={pic.url}
             />
           ))}
