@@ -18,8 +18,9 @@ class App extends Component {
      
       if (this.state.pics[i].id === id) {
             this.setState({ score: this.state.score + 1 });
+            const newPics = this.state.newPics.push(this.state.pics[i]);
             const pics = this.state.pics.filter(pic => pic.id !== id);
-            const newPics = this.state.pics.filter(pic => pic.id === id);
+            
             this.setState({ pics });
             this.setState({ newPics })
             console.log(newPics)
@@ -59,7 +60,7 @@ class App extends Component {
             />
           ))}
           {this.state.newPics.map(pic => (
-            <Image key={pic.id} url={pic.url} />
+            <Image id={pic.id} key={pic.id} url={pic.url} />
           ))}
         </Content>
       </div>
