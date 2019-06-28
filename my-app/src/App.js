@@ -6,11 +6,6 @@ import Content from "./Components/Content";
 import pics from "./pictures.json";
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.imageEl = React.createRef();
-  }
-
 
   state = {
     pics,
@@ -43,11 +38,6 @@ class App extends Component {
   };
     }
     
-handleClick = () => {
-  this.imageEl.current.imgClicked();
-  console.log("THIS IS WORKING")
-}
-
 
   render() {
     return (
@@ -57,10 +47,8 @@ handleClick = () => {
           {this.state.pics.map(pic => (
             <Image
               id={pic.id}
-              ref={this.imageEl}
-              clicked={this.state.clicked}
               key={pic.id}
-              onClick={this.handleClick}
+              imageClicked={this.imageClicked}
               url={pic.url}
             />
           ))}
