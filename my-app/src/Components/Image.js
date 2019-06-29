@@ -5,7 +5,7 @@ class Image extends Component {
 
     render(){
         return (
-    <div className="col-auto mx-auto p-5">
+    <div className="col-3 mb-2 p-5">
       <img
         className="shadow-lg mb-5 bg-white rounded check"
         src={this.props.url}
