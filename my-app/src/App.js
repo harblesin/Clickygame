@@ -10,39 +10,35 @@ class App extends Component {
   state = {
     pics,
     newPics: [],
-    score: 0
+    score: 0,
+    highScore: 0
   };
 
   imageClicked = id => {
 
-    console.log(this.props.state  )
+    const newPics = this.state.newPics;
+    const test = this.state.newPics.includes(id)
 
-    for(let i=0; this.state.pics.length > i; i++){
-     
-      if (this.state.pics[i].id === id) {
-        
-            this.setState({ score: this.state.score + 1 });
-            const newPics = this.state.newPics.push(this.state.pics[i]);
-            const pics = this.state.pics.filter(pic => pic.id !== id);
-            
-            this.setState({ pics });
-            this.setState({ newPics })
-            console.log(newPics)
-
-      
-    } else {
-      alert("You already clicked that!");
-    } 
-
-    //this.setState({ newPics });
-  };
+    if(!test){
+      newPics.push(id);
+      this.setState({newPics})
+      this.setState({score: this.state.score+1})
+      if(this.state.score > this.state.highScore){
+        this.setState({highScore: this.state.score})
+      }
+    }else{
+      alert("YOU ALREADY CLICKED THAT")
+      this.setState({newPics: []})
+      this.setState({score: 0})
     }
+  };
+    
     
 
   render() {
     return (
       <div className="App">
-        <Navbar score={this.state.score} />
+        <Navbar score={this.state.score} highScore={this.state.highScore} />
         <Content>
           {this.state.pics.map(pic => (
             <Image
