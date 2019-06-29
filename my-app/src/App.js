@@ -14,6 +14,23 @@ class App extends Component {
     highScore: 0
   };
 
+  shuffle = array => {
+
+    var index = array.length;
+    var temp, randomIndex;
+
+    while (0 !== index) {
+      randomIndex = Math.floor(Math.random()*index);
+      index -= 1;
+
+      temp = array[index];
+      array[index] = array[randomIndex];
+      array[randomIndex] = temp;
+    }
+    
+    this.setState({pics: array})
+  }
+
   imageClicked = id => {
 
     const newPics = this.state.newPics;
@@ -26,12 +43,15 @@ class App extends Component {
       if(this.state.score > this.state.highScore){
         this.setState({highScore: this.state.score})
       }
+      this.shuffle(this.state.pics);
     }else{
       alert("YOU ALREADY CLICKED THAT")
       this.setState({newPics: []})
       this.setState({score: 0})
     }
   };
+
+
     
     
 
@@ -48,9 +68,9 @@ class App extends Component {
               url={pic.url}
             />
           ))}
-          {this.state.newPics.map(pic => (
+          {/* {this.state.newPics.map(pic => (
             <Image id={pic.id} key={pic.id} url={pic.url} />
-          ))}
+          ))} */}
         </Content>
       </div>
     );
