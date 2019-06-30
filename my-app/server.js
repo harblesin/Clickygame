@@ -1,12 +1,14 @@
-const express = require('express');
-const favicon = require('express-favicon');
-const path = require('path');
-const port = process.env.PORT || 3001;
+const express = require("express");
+
 const app = express();
-app.use(favicon(__dirname + '/build/favicon.ico'));
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname, 'build')));
-app.get('/*', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+const PORT = process.env.PORT || 3001;
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
+
+app.listen(PORT, function() {
+  console.log(`🌎  ==> API Server now listening on PORT ${PORT}!`);
 });
-app.listen(port);
