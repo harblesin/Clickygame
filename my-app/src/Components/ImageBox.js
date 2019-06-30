@@ -9,7 +9,6 @@ class ImageBox extends Component {
             <h1 className="congrat">{this.props.winMessage}</h1>
             <h1 className="clickMe" onClick={this.props.reset}>{this.props.clickMe}</h1>
             </div>
-            
         )
     }
 }
