@@ -1,0 +1,18 @@
+.holder{
+    margin: auto;
+}
+
+img{
+    border-radius: 20px;
+}
+
+.congrat{
+    text-shadow: 1px 1px 1px rgb(0, 0, 0), 20em 100em 100em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+    color:rgb(139, 17, 13);
+    font-size: 100px;
+}
+
+.clickMe{
+    text-shadow: 1px 1px 1px rgb(0, 0, 0), 20em 100em 100em rgb(255, 255, 255), 0 0 0.2em rgb(255, 255, 255);
+    color:rgb(172, 121, 119);
+}

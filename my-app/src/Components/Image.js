@@ -5,9 +5,9 @@ class Image extends Component {
 
     render(){
         return (
-    <div className="col-3 mb-2 p-5">
+    <div className="col-auto mb-2 imgDiv">
       <img
-        className="shadow-lg mb-5 bg-white rounded check"
+        className="shadow-lg bg-white rounded check"
         src={this.props.url}
         alt=""
         onClick={() => this.props.imageClicked(this.props.id)}

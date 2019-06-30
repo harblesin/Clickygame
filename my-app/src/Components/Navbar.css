@@ -4,9 +4,19 @@
     margin-left:-15px;
     background-color:rgb(255, 255, 255);
     color: oldlace;
+    background-image: url("../images/curtains.jpg")
 }
 
 .display-5, h3{
-    background-color: rgb(255, 255, 255);
-    text-shadow: 1px 1px 2px rgb(121, 86, 86), 0 0 1em rgb(206, 187, 125), 0 0 0.2em rgb(168, 23, 173);
+    text-shadow: 1px 1px 2px rgb(121, 86, 86), 0 0 1em rgb(255, 242, 200), 0 0 0.2em rgb(253, 196, 255);
 }
+
+.topRow{
+    margin-top:-30px;
+}
+
+.botRow{
+    text-align:center;
+    margin-bottom:-40px;
+}
+
